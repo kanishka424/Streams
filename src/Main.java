@@ -39,7 +39,7 @@ public class Main {
 
         someBingoNumbers
                 .stream()
-                .map(String::toUpperCase)
+                .map(String::toUpperCase)//map(s->s.toUpperCase()) is similar
                 .filter(s->s.startsWith("G"))
                 .sorted()
                 .forEach(System.out::println);
@@ -47,3 +47,6 @@ public class Main {
 
     }
 }
+
+//NOTE
+//1.We only can use Method references when the type can be inferred that's why we didn't use it in "filter(s->s.startsWith("G"))"
