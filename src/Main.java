@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -43,6 +44,21 @@ public class Main {
                 .filter(s->s.startsWith("G"))
                 .sorted()
                 .forEach(System.out::println);
+
+
+        System.out.println("================================================================================From own Stream=====================================================");
+
+        Stream ioNumberStream=Stream.of("A01","A02","A03","G04");
+        Stream outNumberStream=Stream.of("A01","C02","B03","G04");
+
+        Stream concatStream=Stream.concat(ioNumberStream,outNumberStream);
+
+        System.out.println(concatStream
+                                .distinct()
+                                .peek(System.out::println)
+                                .count());
+
+
 
 
     }
